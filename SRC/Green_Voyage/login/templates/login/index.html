@@ -1,0 +1,88 @@
+
+
+
+
+<!--head and referencing the static files-->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nature Landing Page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body>
+  <!-- Your HTML code here -->
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-image">
+    <img src="{% static 'images/hero-image.jpg' %}" alt="Nature Image">
+  </div>
+  <div class="hero-text">
+    <h1>Explore Nature</h1>
+    <p>Find eco-friendly accommodations, tours, and activities that let you discover the beauty of nature without harming it.</p>
+    <a href="#" class="cta-btn">Get Started</a>
+  </div>
+</section>
+
+<!-- Featured Destinations -->
+<section class="featured">
+  <h2>Featured Destinations</h2>
+  <div class="cards">
+    {% for destination in destinations %}
+    <div class="card">
+      <img src="{{ destination.image.url }}" alt="{{ destination.name }}">
+      <div class="card-text">
+        <h3>{{ destination.name }}</h3>
+        <p>{{ destination.description }}</p>
+        <a href="#" class="cta-btn">Explore</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial">
+    <img src="{% static 'images/testimonial-1.jpg' %}" alt="Customer Image">
+    <p>"I had an amazing time on my eco-tour. The guides were knowledgeable and passionate about conservation, and I felt good knowing that my travel choices were helping to protect the environment."</p>
+    <h4>John Doe</h4>
+  </div>
+  <div class="testimonial">
+    <img src="{% static 'images/testimonial-2.jpg' %}" alt="Customer Image">
+    <p>"I love the idea of sustainable travel, and this platform made it easy for me to find eco-friendly options. I can't wait to plan my next trip!"</p>
+    <h4>Jane Smith</h4>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="cta-text">
+    <h2>Join the Sustainable Travel Movement</h2>
+    <p>Make a positive impact on the environment and local communities by choosing eco-friendly travel options. Sign up for our newsletter to stay up-to-date on the latest sustainable travel trends and deals.</p>
+  </div>
+  <div class="cta-form">
+    <form action="#" method="post">
+      <input type="email" name="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
+
+
+</body>
+</html>
+
+
+
+
+
