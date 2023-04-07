@@ -4,41 +4,52 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
+
+
+
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm()(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect(reverse('home'))
+            return redirect(reverse('templates/login/userac.html'))
     else:
         form = UserCreationForm()
-    return render(request, 'template/signup.html', {'form': form}) #, {'form': form} was inside parentheses
+    return render(request, 'login/signup.html', {'form': form})
 
-def login(request):
+def login_view(request):
     if request.method == 'POST':
-        form = AuthenticationForm()(request.POST)
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']
+            username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            user = authenticate(request, email=email, password=password)
+            user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect(reverse('home'))
+                return redirect(reverse('user_view'))
             else:
-                form.add_error(None, 'Invalid email or password')
+                form.add_error(None, 'Invalid username or password')
     else:
         form = AuthenticationForm()
-    return render(request, 'template/signin.html', {'form': form}) #, {'form': form} was inside parentheses
+    return render(request, 'login/login.html', {'form': form})
+
+# creating the users view for after authentication
+
+def user_view(request):
+    return render (request, 'login/userac.html')
+
+
+
 
 @login_required
 def home(request):
-    return render(request, 'template/index.html')
+    return render(request, 'login/index.html')
 
 @login_required
 def signout(request):
     logout(request)
-    return render(request, 'template/userac.html')
+    return render(request, 'login/signout.html')
 
 
 

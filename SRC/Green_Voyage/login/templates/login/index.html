@@ -3,7 +3,7 @@
 
 
 <!--head and referencing the static files-->
-
+{% load admin_urls %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nature Landing Page</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
 </head>
 <body>
   <!-- Your HTML code here -->
@@ -26,7 +26,7 @@
   <div class="hero-text">
     <h1>Explore Nature</h1>
     <p>Find eco-friendly accommodations, tours, and activities that let you discover the beauty of nature without harming it.</p>
-    <a href="#" class="cta-btn">Get Started</a>
+    <a href="/signup/" target='/signup/' class="cta-btn">Get Started</a>
   </div>
 </section>
 
@@ -68,11 +68,8 @@
     <h2>Join the Sustainable Travel Movement</h2>
     <p>Make a positive impact on the environment and local communities by choosing eco-friendly travel options. Sign up for our newsletter to stay up-to-date on the latest sustainable travel trends and deals.</p>
   </div>
-  <div class="cta-form">
-    <form action="#" method="post">
-      <input type="email" name="email" placeholder="Enter your email">
-      <button type="submit">Subscribe</button>
-    </form>
+  <div class="cta-form" style="align-items:center;">
+    <p>call to action</p>
   </div>
 </section>
 
