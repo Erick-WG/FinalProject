@@ -13,13 +13,14 @@
         {% load static %}
 
         {% block content %}
+
         {% csrf_token %}
-        <h4>Welcome our users</h4>
-        <p>Good day {{user.name}}</p>
 
-        {% end block %}
+            <h4>Welcome our users</h4>
+            <p>Good day {{user_view.username}}</p>
 
-        
+        {% endblock %}
+
         <script src="" async defer></script>
     </body>
 </html>

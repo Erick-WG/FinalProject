@@ -16,7 +16,7 @@
         <h1>Create an account with us</h1>
             {% block content %}
                <h2>Sign Up</h2>
-               <form method="post">
+               <form  action="{% url 'signup' %}" method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                      <button type="submit">Sign Up</button>

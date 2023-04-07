@@ -16,14 +16,13 @@
         <h3>login to your account</h3>
         {% block content %}
            <h2>SignIn</h2>
-           <form method="post">
+           <form action="{% url 'login_view' %}" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                  <button type="submit">SignIn</button>
             </form>
          {% endblock %}
 
-        
         <script src="" async defer></script>
     </body>
 </html>
