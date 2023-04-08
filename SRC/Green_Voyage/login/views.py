@@ -47,7 +47,7 @@ def home(request):
 @login_required
 def signout(request):
     logout(request)
-    return render(request, 'login/signout.html')
+    return render(request, 'login/logout.html')
 
 
 
