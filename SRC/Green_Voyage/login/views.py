@@ -5,18 +5,20 @@ from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
-
-
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            email = form.cleaned_data.get('email')
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            form.save()
+            user = authenticate(request, username=username, password=password)
             login(request, user)
             return redirect(reverse('user_view'))
     else:
         form = UserCreationForm()
-    return render(request, 'login/signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
@@ -32,24 +34,21 @@ def login_view(request):
                 form.add_error(None, 'Invalid username or password')
     else:
         form = AuthenticationForm()
-    return render(request, 'login/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
-# creating the users view for after authentication
-
+@login_required
 def user_view(request):
-    return render (request, 'login/userac.html')
-
-
-
+    return render (request, 'userac.html')
 
 @login_required
 def home(request):
-    return render(request, 'login/index.html')
+    return render(request, 'index.html')
 
 @login_required
 def signout(request):
     logout(request)
-    return render(request, 'login/signout.html')
+    return render(request, 'signout.html')
+
 
 
 
