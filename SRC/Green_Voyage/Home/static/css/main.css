@@ -1,0 +1,272 @@
+/* Base Styles */
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  a {
+    color: #0D596C;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Hero Section */
+  
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #A0AFAF;
+    color: #FFF;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-image img {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-btn {
+    display: inline-block;
+    background-color: #FFF;
+    color: #0D596C;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background-color: #0D596C;
+    color: #FFF;
+  }
+  
+  /* Featured Destinations */
+  
+  .featured {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #FFF;
+  }
+  
+  .featured h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    height: 15rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .card-text {
+    padding: 1rem;
+  }
+  
+  .card-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Testimonials */
+  
+  .testimonials {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #F5F5F5;
+  }
+  
+  .testimonials h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonial {
+    margin-top: 2rem;
+  }
+  
+  .testimonial img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .testimonial p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonial h4 {
+    font-size: 1.5rem;
+    font-weight:bold;
+    margin-bottom: 0.5rem;
+    }
+    
+    .testimonial span {
+    font-size: 1.2rem;
+    color: #A0AFAF;
+    }
+    
+    /* Contact */
+    
+    .contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #FFF;
+    }
+    
+    .contact h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    }
+    
+    .contact-form {
+    max-width: 50rem;
+    margin: 0 auto;
+    }
+    
+    .form-control {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5rem;
+    background-color: #F5F5F5;
+    color: #0D596C;
+    }
+    
+    .form-control:focus {
+    outline: none;
+    background-color: #FFF;
+    }
+    
+    .submit-btn {
+    display: inline-block;
+    background-color: #0D596C;
+    color: #FFF;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    transition: background-color 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+    background-color: #A0AFAF;
+    }
+    
+    /* Footer */
+    
+    .footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #0D596C;
+    color: #FFF;
+    }
+    
+    .footer p {
+    margin: 0;
+    }
+    
+    .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    }
+    
+    .social-link {
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: #FFF;
+    transition: color 0.3s ease;
+    }
+    
+    .social-link:hover {
+    color: #A0AFAF;
+    }
+    
+    .social-link i {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #FFF;
+    }
+  

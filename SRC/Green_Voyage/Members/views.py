@@ -23,5 +23,3 @@ class CreateUserForm(generic.CreateView):
 
 
 
-
-
