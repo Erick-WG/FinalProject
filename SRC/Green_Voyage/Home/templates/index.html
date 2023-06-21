@@ -7,33 +7,35 @@ Nature Landing Page
 {% load static %}
 <!-- Hero Section -->
 <section class="hero">
-  <div class="hero-image">
-    <img src="{% static 'images/hero-image.jpg' %}" alt="Nature Image">
+  <div>
+    <img src="{% static 'images/adventure-bicycle-cloud-258045.jpg' %}" alt="Cycling-In-Nature's-Beauty">
   </div>
   <div class="hero-text">
     <h1>Explore Nature</h1>
     <p>Find eco-friendly accommodations, tours, and activities that let you discover the beauty of nature without harming it.</p>
-    <a href="{% url 'register' %}" target='/accounts/signup/' class="cta-btn">Get Started</a>
+    <a href="{% url 'register' %}" target='register/' class="cta-btn">Get Started</a>
   </div>
 </section>
 
 <div class="container">
       <!-- Featured Destinations -->
-      <section class="featured">
-        <h2>Featured Destinations</h2>
-        <div class="cards">
-          {% for destination in object_list %}
-          <div class="card">
-            <img src="{{ destination.image.url }}" alt="{{ destination.name }}">
-            <div class="card-text">
-              <h3>{{ destination.name }}</h3>
-              <p>{{ destination.description }}</p>
-              <a href="#" class="cta-btn">Explore</a>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </section>
+        <div class="container">
+          <section class="featured">
+              <h2>Featured Destinations</h2>
+              <div class="cards">
+              {% for destination in destinations %}
+              <div class="card">
+                  <img src="{{ destination.image.url }}" alt="{{ destination.name }}">
+                  <div class="card-text">
+                  <h3>{{ destination.name }}</h3>
+                  <p>{{ destination.description }}</p>
+                  <a href="#" class="cta-btn">Explore</a>
+                  </div>
+              </div>
+              {% endfor %}
+              </div>
+          </section>
+      </div>
 
       <!-- Testimonials -->
       <section class="testimonials">

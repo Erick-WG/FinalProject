@@ -30,7 +30,11 @@
 
           <!-- controlling user actions by authentication. -->
 
-          {% if user.is_authenticated %}
+          {% if auth.is_authenticated %}
+
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'create_destinations' %}">Add New Destination.</a>
+              </li>
 
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">logOut</a>
@@ -48,14 +52,17 @@
         </ul>
       </div>
     </nav>
-
+  {% if user.is_authenticated %}
     <div>
-        {% block content %}
+      {% block content %}
 
 
-        {% endblock %}
+      {% endblock %}
     </div>
 
+  {% else %}>
+
+  {% endif %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
