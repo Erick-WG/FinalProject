@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+    Delete {{ destination.name }}.
+{% endblock %}
+
+{% block content %}
+
+<h1>Add a Destination.</h1>
+
+<!-- here we need a form that accepts fields that are in the db, to do that we can have custom forms or django forms -->
+<div class="form-group">
+
+<!-- Users can only post when Logged in and already have an account. -->
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+
+            <h3>Are you sure you want to delete {{ destination.name }}</h3>
+            <!-- This is the Post Button -->
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    {% endif %}
+<!-- we don't need to close off the form tag after loading the django templates -->
+
+{% endblock %}
