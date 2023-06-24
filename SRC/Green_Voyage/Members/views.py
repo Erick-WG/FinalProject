@@ -12,7 +12,7 @@ class CreateUserView(generic.CreateView):
 
 class LoginUser(LoginView):
     # def (function for user management, login for users and admins.)
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('home')
 
 
 

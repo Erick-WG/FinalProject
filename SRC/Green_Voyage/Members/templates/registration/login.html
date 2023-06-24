@@ -1,26 +1,29 @@
-{% extends 'base.html' %}
-{% block title %}
-    Login
-{% endblock %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h3>login to your account</h3>
+        {% block content %}
+           <h2>SignIn</h2>
+           <form action="{% url 'login_view' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                 <button type="submit">SignIn</button>
+            </form>
+         {% endblock %}
 
-{% block content %}
-
-<h1>Login</h1>
-
-<!-- here we need a form that accepts fields that are in the db, to do that we can have custom forms or django forms -->
-<div class="form-group">
-
-<form method="post">
-    {% csrf_token %}
-    <!-- importing the django form with p tags -->
-    {{ form.as_p }}
-
-    <!-- This is the Post Button -->
-    <button class="btn btn-primary">Login</button>
-
-
-
-</div>
-<!-- we don't need to close off the form tag after loading the django templates -->
-
-{% endblock %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
