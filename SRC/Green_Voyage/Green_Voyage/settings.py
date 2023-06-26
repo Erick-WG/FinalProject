@@ -127,12 +127,18 @@ STATIC_URL = '/static/'
 #know what to put here if i have to join my custom code here
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Home/static/'),
     os.path.join(BASE_DIR, 'Home/static/css'),
     os.path.join(BASE_DIR, 'Home/static/images'),
     os.path.join(BASE_DIR, 'static'),
 ]
+=======
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+>>>>>>> parent of 0c0f08f (system configs.)
 =======
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static'),
@@ -146,7 +152,12 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # handling successful redirects.
+=======
+
+
+>>>>>>> parent of 0c0f08f (system configs.)
 =======
 
 
