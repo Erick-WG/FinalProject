@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # own apps created by me here.
-    'Members',
-    'Home',
+    'Members.apps.MembersConfig',
+    'Home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,12 +126,18 @@ STATIC_URL = '/static/'
 #joining custom css file to the application
 #know what to put here if i have to join my custom code here
 
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Home/static/'),
     os.path.join(BASE_DIR, 'Home/static/css'),
     os.path.join(BASE_DIR, 'Home/static/images'),
     os.path.join(BASE_DIR, 'static'),
 ]
+=======
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+>>>>>>> parent of 0c0f08f (system configs.)
 
 
 # Default primary key field type
@@ -139,7 +145,12 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 # handling successful redirects.
+=======
+
+
+>>>>>>> parent of 0c0f08f (system configs.)
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
