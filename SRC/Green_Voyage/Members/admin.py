@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import UserManager, BaseUserManager, AbstractBaseUser
+from . import models # UserManager, BaseUserManager #, AbstractBaseUser
 
-admin.site.register('UserManager')
-admin.site.register('BaseUserManager')
-admin.site.register('AbstractBaseUser')
+# admin.site.register(models.UserManager)
+# admin.site.register(models.BaseUserManager)
+# admin.site.register(AbstractBaseUser)

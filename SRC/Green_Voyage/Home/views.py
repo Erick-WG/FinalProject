@@ -34,7 +34,7 @@ class CreateDestination(CreateView):
 
 class CreateActivity(CreateView):
     model = Activity
-    template_name = 'activity.html'
+    template_name = 'create_activity.html'
     # form_class = ActivityCreationForm
 
 

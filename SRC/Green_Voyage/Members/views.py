@@ -11,8 +11,9 @@ class CreateUserView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 class LoginUser(LoginView):
+    template_name = ''
     # def (function for user management, login for users and admins.)
-    success_url = reverse_lazy('dashboard')
+    # success_url = reverse_lazy('dashboard')
 
 
 
